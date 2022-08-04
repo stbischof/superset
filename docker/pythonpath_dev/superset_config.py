@@ -99,6 +99,32 @@ WEBDRIVER_BASEURL_USER_FRIENDLY = WEBDRIVER_BASEURL
 
 SQLLAB_CTAS_NO_LIMIT = True
 
+
+## test
+BABEL_DEFAULT_LOCALE = "de"
+BABEL_DEFAULT_FOLDER = "superset/translations"
+
+LANGUAGES = {
+    'en': {'flag': 'us', 'name': 'English'},
+    'de': {'flag': 'de', 'name': 'German'}
+}
+
+FEATURE_FLAGS = {
+    "THUMBNAILS": True,
+    "THUMBNAILS_SQLA_LISTENERS": True,
+}
+
+THUMBNAIL_SELENIUM_USER = "admin"
+
+THUMBNAIL_CACHE_CONFIG = {
+    "CACHE_TYPE": "RedisCache",
+    "CACHE_DEFAULT_TIMEOUT": 10000,
+    "CACHE_KEY_PREFIX": "superset_thumbnails_",
+    "CACHE_REDIS_HOST": REDIS_HOST,
+    "CACHE_REDIS_PORT": REDIS_PORT,
+    "CACHE_REDIS_DB": REDIS_CELERY_DB,
+}
+
 #
 # Optionally import superset_config_docker.py (which will have been included on
 # the PYTHONPATH) in order to allow for local settings to be overridden
